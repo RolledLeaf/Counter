@@ -24,23 +24,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        counterChange.text = "Значение счётчика: \(counter)"
+        counterChange.text = "Значение счётчика: \(counter) \n"
     }
 
     
     @IBAction func buttonClickPlus(_ sender: Any) {
         counter += 1
         counterChange.text = "Значение счётчика: \(counter)"
-        eventStatusText.text.append(" \(currentDateTime) Значение изменено на +1")
+        eventStatusText.text.append(" \(currentDateTime) Значение изменено на +1\n")
     }
     
     @IBAction func buttonClickMinus(_ sender: Any) {
-        if counter >= 1 {
+        if counter > 0 {
             counter -= 1
-            eventStatusText.text.append(" \(currentDateTime) Значение изменено на -1")
-        }
-        if counter < 0 {
-            eventStatusText.text.append(" \(currentDateTime) попытка уменьшить значение счётчика ниже 0")
+            eventStatusText.text.append(" \(currentDateTime) Значение изменено на -1\n")
+        } else {
+            eventStatusText.text.append(" \(currentDateTime) попытка уменьшить значение счётчика ниже 0\n")
         }
         
         counterChange.text = "Значение счётчика: \(counter)"
@@ -49,7 +48,7 @@ class ViewController: UIViewController {
     @IBAction func buttonCounterReset(_ sender: Any) {
         counter = 0
         counterChange.text = "Значение счётчика: \(counter)"
-        eventStatusText.text.append(" \(currentDateTime) Значение сброшено")
+        eventStatusText.text.append(" \(currentDateTime) Значение сброшено\n")
     }
     
     
