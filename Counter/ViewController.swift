@@ -28,13 +28,23 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func buttonClickPlus(_ sender: Any) {
+    @IBAction func buttonClickPlus(_ sender: UIButton) {
         counter += 1
         counterChange.text = "Значение счётчика: \(counter)"
         eventStatusText.text.append(" \(currentDateTime) Значение изменено на +1\n")
+        
+        UIView.animate(withDuration: 0.1, // длительность анимации
+                          animations: {
+               sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) // уменьшение кнопки
+           }, completion: { _ in
+               UIView.animate(withDuration: 0.1) {
+                   sender.transform = CGAffineTransform.identity // возврат к исходному размеру
+               }
+           })
+        
     }
     
-    @IBAction func buttonClickMinus(_ sender: Any) {
+    @IBAction func buttonClickMinus(_ sender: UIButton) {
         if counter > 0 {
             counter -= 1
             eventStatusText.text.append(" \(currentDateTime) Значение изменено на -1\n")
@@ -43,13 +53,32 @@ class ViewController: UIViewController {
         }
         
         counterChange.text = "Значение счётчика: \(counter)"
+        
+        UIView.animate(withDuration: 0.1, // длительность анимации
+                          animations: {
+               sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) // уменьшение кнопки
+           }, completion: { _ in
+               UIView.animate(withDuration: 0.1) {
+                   sender.transform = CGAffineTransform.identity // возврат к исходному размеру
+               }
+           })
     }
     
-    @IBAction func buttonCounterReset(_ sender: Any) {
+    @IBAction func buttonCounterReset(_ sender: UIButton) {
         counter = 0
         counterChange.text = "Значение счётчика: \(counter)"
         eventStatusText.text.append(" \(currentDateTime) Значение сброшено\n")
+        
+        UIView.animate(withDuration: 0.1, // длительность анимации
+                          animations: {
+               sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) // уменьшение кнопки
+           }, completion: { _ in
+               UIView.animate(withDuration: 0.1) {
+                   sender.transform = CGAffineTransform.identity // возврат к исходному размеру
+               }
+           })
     }
+    
     
     
     @IBAction func textResetButton(_ sender: Any) {
