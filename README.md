@@ -5,7 +5,6 @@ Easy way to record your countups and countdowns
 ## Features
 - Two butons to increase and reduce current count value
 - Date and time logs for each count
-- 
 
 ## Technologies
 -Interface builder
