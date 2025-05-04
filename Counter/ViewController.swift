@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  Counter
-//
-//  Created by Vitaly Wexler on 19.07.2024.
-//
 
 import UIKit
 
@@ -20,14 +14,11 @@ class ViewController: UIViewController {
         return dateFormatter.string(from: Date())
     }
     
-   
-
     override func viewDidLoad() {
         super.viewDidLoad()
         counterChange.text = "Значение счётчика: \(counter) \n"
     }
 
-    
     @IBAction func buttonClickPlus(_ sender: UIButton) {
         counter += 1
         counterChange.text = "Значение счётчика: \(counter)"
@@ -41,7 +32,6 @@ class ViewController: UIViewController {
                    sender.transform = CGAffineTransform.identity // возврат к исходному размеру
                }
            })
-        
     }
     
     @IBAction func buttonClickMinus(_ sender: UIButton) {
@@ -54,12 +44,12 @@ class ViewController: UIViewController {
         
         counterChange.text = "Значение счётчика: \(counter)"
         
-        UIView.animate(withDuration: 0.1, // длительность анимации
+        UIView.animate(withDuration: 0.1, 
                           animations: {
-               sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) // уменьшение кнопки
+               sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
            }, completion: { _ in
                UIView.animate(withDuration: 0.1) {
-                   sender.transform = CGAffineTransform.identity // возврат к исходному размеру
+                   sender.transform = CGAffineTransform.identity
                }
            })
     }
@@ -71,23 +61,16 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.1, // длительность анимации
                           animations: {
-               sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) // уменьшение кнопки
+               sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
            }, completion: { _ in
                UIView.animate(withDuration: 0.1) {
-                   sender.transform = CGAffineTransform.identity // возврат к исходному размеру
+                   sender.transform = CGAffineTransform.identity
                }
            })
     }
     
-    
-    
     @IBAction func textResetButton(_ sender: Any) {
         eventStatusText.text.removeAll()
     }
-    
-    
-    
-    
-    
 }
 
